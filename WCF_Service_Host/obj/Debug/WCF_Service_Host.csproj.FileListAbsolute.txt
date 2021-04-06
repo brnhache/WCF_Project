@@ -1,0 +1,10 @@
+D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\bin\Debug\WCF_Service_Host.exe.config
+D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\bin\Debug\WCF_Service_Host.exe
+D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\bin\Debug\WCF_Service_Host.pdb
+D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\bin\Debug\WCF_Card_Library.dll
+D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\bin\Debug\WCF_Card_Library.pdb
+D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.csprojAssemblyReference.cache
+D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.csproj.CoreCompileInputs.cache
+D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.csproj.CopyComplete
+D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.exe
+D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.pdb

@@ -1,0 +1,10 @@
+D:\Semester 5\.NET\WCF_Project\WCF_Project\bin\Debug\WCF_Project.exe.config
+D:\Semester 5\.NET\WCF_Project\WCF_Project\bin\Debug\WCF_Project.exe
+D:\Semester 5\.NET\WCF_Project\WCF_Project\bin\Debug\WCF_Project.pdb
+D:\Semester 5\.NET\WCF_Project\WCF_Project\bin\Debug\WCF_Card_Library.dll
+D:\Semester 5\.NET\WCF_Project\WCF_Project\bin\Debug\WCF_Card_Library.pdb
+D:\Semester 5\.NET\WCF_Project\WCF_Project\obj\Debug\WCF_Project.csprojAssemblyReference.cache
+D:\Semester 5\.NET\WCF_Project\WCF_Project\obj\Debug\WCF_Project.csproj.CoreCompileInputs.cache
+D:\Semester 5\.NET\WCF_Project\WCF_Project\obj\Debug\WCF_Project.csproj.CopyComplete
+D:\Semester 5\.NET\WCF_Project\WCF_Project\obj\Debug\WCF_Project.exe
+D:\Semester 5\.NET\WCF_Project\WCF_Project\obj\Debug\WCF_Project.pdb
