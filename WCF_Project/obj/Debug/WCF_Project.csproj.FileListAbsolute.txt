@@ -8,3 +8,13 @@ D:\Semester 5\.NET\WCF_Project\WCF_Project\obj\Debug\WCF_Project.csproj.CoreComp
 D:\Semester 5\.NET\WCF_Project\WCF_Project\obj\Debug\WCF_Project.csproj.CopyComplete
 D:\Semester 5\.NET\WCF_Project\WCF_Project\obj\Debug\WCF_Project.exe
 D:\Semester 5\.NET\WCF_Project\WCF_Project\obj\Debug\WCF_Project.pdb
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\bin\Debug\WCF_Project.exe.config
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\bin\Debug\WCF_Project.exe
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\bin\Debug\WCF_Project.pdb
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\bin\Debug\WCF_Card_Library.dll
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\bin\Debug\WCF_Card_Library.pdb
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\obj\Debug\WCF_Project.csprojAssemblyReference.cache
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\obj\Debug\WCF_Project.csproj.CoreCompileInputs.cache
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\obj\Debug\WCF_Project.csproj.CopyComplete
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\obj\Debug\WCF_Project.exe
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\obj\Debug\WCF_Project.pdb

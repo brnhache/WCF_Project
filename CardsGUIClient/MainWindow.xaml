@@ -1,0 +1,24 @@
+﻿<Window x:Class="CardsGUIClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardsGUIClient"
+        mc:Ignorable="d"
+        Title="My Cards" Height="350" Width="525" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid RenderTransformOrigin="0.5,0.5">
+
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Button x:Name="btnDraw" Content="Draw" HorizontalAlignment="Center" Height="35" Margin="257,27,77,0" VerticalAlignment="Top" Width="185" Click="btnDraw_Click" IsEnabled="True"/>
+        <ListBox x:Name="lstCards" HorizontalAlignment="Center" Height="175" VerticalAlignment="Top" Width="185" Margin="257,75,77,0"/>
+        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Center" Height="32" Margin="257,265,77,0" VerticalAlignment="Top" Width="185" Click="btnClose_Click"/>
+        <Label x:Name="playerLabel" Content="" HorizontalAlignment="Left" Height="60" Margin="50,120,0,0" VerticalAlignment="Top" Width="125" FontSize="30"/>
+        <TextBlock  x:Name="cardCount" HorizontalAlignment="Left" Margin="50,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="90" Width="150"/>
+    </Grid>
+</Window>

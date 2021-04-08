@@ -1,0 +1,6 @@
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Card_Library\bin\Release\WCF_Card_Library.dll
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Card_Library\bin\Release\WCF_Card_Library.pdb
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Card_Library\obj\Release\WCF_Card_Library.csprojAssemblyReference.cache
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Card_Library\obj\Release\WCF_Card_Library.csproj.CoreCompileInputs.cache
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Card_Library\obj\Release\WCF_Card_Library.dll
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Card_Library\obj\Release\WCF_Card_Library.pdb

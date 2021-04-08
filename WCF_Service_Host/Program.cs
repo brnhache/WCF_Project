@@ -28,14 +28,7 @@ namespace WCF_Service_Host
 
             try
             {
-                // Register the service Address
-                //servHost = new ServiceHost(typeof(Shoe), new Uri("net.tcp://localhost:13200/CardsLibrary/"));
-
-                // Register the service Contract and Binding
-                //servHost.AddServiceEndpoint(typeof(IShoe), new NetTcpBinding(), "ShoeService");
-
                 servHost = new ServiceHost(typeof(Deck));
-
 
                 // Run the service
                 servHost.Open();

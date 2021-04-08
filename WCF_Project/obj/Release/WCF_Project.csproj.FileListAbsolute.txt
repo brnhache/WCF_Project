@@ -1,0 +1,10 @@
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\bin\Release\WCF_Project.exe.config
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\bin\Release\WCF_Project.exe
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\bin\Release\WCF_Project.pdb
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\bin\Release\WCF_Card_Library.dll
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\bin\Release\WCF_Card_Library.pdb
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\obj\Release\WCF_Project.csprojAssemblyReference.cache
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\obj\Release\WCF_Project.csproj.CoreCompileInputs.cache
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\obj\Release\WCF_Project.csproj.CopyComplete
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\obj\Release\WCF_Project.exe
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Project\obj\Release\WCF_Project.pdb

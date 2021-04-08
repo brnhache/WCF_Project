@@ -14,139 +14,188 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using static WCF_Card_Library.Card;
 
 namespace WCF_Card_Library
 {
-    //[ServiceContract]
     public interface ICallback
     {
         [OperationContract(IsOneWay = true)]
-        void UpdateClient(CallbackInfo info);
+        void UpdateClient(int playerIndex, string cardDrawn, string counts);
+
+        [OperationContract(IsOneWay = true)]
+        void ClearData();
     }
     /*
     * Program:         CardsLibrary.dll
     * Module:          DeckInterface.cs
     * Author:          Brian Hache, Danish Davis
     * Date:            March 25, 2021
-    * Description:     Defines the Deck Interface class.
-    *                  
-    *                  
+    * Description:     Defines the Deck Interface class.             
     */
     [ServiceContract(CallbackContract = typeof(ICallback))]
     public interface DeckInterface
     {
-        void Shuffle();
-        Card Draw();
-        int NumDecks { get; set; }
-        int NumCards { get; }
+        int PlayerIndex { [OperationContract] get; [OperationContract(IsOneWay = true)] set; }
+        int NumPlayers { [OperationContract] get; [OperationContract(IsOneWay = true)] set; }
+        int ActivePlayerIndex { [OperationContract] get; [OperationContract(IsOneWay = true)] set; }
+
+        [OperationContract(IsOneWay = true)]
+        void RegisterForCallbacks();
+        [OperationContract(IsOneWay = true)]
+        void UnregisterFromCallbacks();
+
+        [OperationContract]
+        Card Draw(int playerIndex);
     }
 
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class Deck : DeckInterface
     {
-        /*------------------------ Member Variables ------------------------*/
 
-        private List<Card> cards = null;    // collection of cards
-        private int cardIdx;                // index of the next card to be dealt
-        private int numDecks;               // number of decks in the shoe - for our game we just need one.
-
+        private List<List<Card>> playersCardSet = null;
+        private List<Card> cardsPlayed = null;
+        private int numPlayers = 0;
+        private int playerIndex = 0;
+        private int activePlayerIndex = 0;
         private HashSet<ICallback> callbacks = new HashSet<ICallback>();
-
-        /*-------------------------- Constructors --------------------------*/
+        static Random rnd = new Random();
 
         public Deck()
         {
-            cards = new List<Card>();
-            numDecks = 1;
-            populate();
+            playersCardSet = new List<List<Card>>();
+            cardsPlayed = new List<Card>();
         }
 
-        /*------------------ Public properties and methods -----------------*/
-
-        // Randomizes the sequence of the Cards in the cards collection
-        public void Shuffle()
-        {
-            // Randomize the cards collection
-            Random rng = new Random();
-            cards = cards.OrderBy(card => rng.Next()).ToList();
-
-            // Reset the cards index
-            cardIdx = 0;
-        }
-
-        // Returns a copy of the next Card in the cards collection
-        public Card Draw()
-        {
-            if (cardIdx >= cards.Count)
-                throw new ArgumentException("The shoe is empty.");
-
-            return cards[cardIdx++];
-        }
-
-        // Lets the client read or modify the number of decks in the shoe
-        public int NumDecks
+        public int PlayerIndex
         {
             get
             {
-                return numDecks;
+                return playerIndex;
             }
             set
             {
-                if (numDecks != value)
-                {
-                    numDecks = value;
-                    populate();
-                }
+                playerIndex = value;
             }
         }
 
-        // Lets the client read the number of cards remaining in the shoe
-        public int NumCards
+        public int ActivePlayerIndex
         {
             get
             {
-                return cards.Count - cardIdx;
+                return activePlayerIndex;
+            }
+            set
+            {
+                activePlayerIndex = value;
             }
         }
 
-        /*------------------------- Helper methods -------------------------*/
+        public int NumPlayers
+        {
+            get
+            {
+                return numPlayers;
+            }
+            set
+            {
+                numPlayers = value;
+                populate();
+            }
+        }
 
-        // Populates the cards attribute with Card objects and then shuffles it 
+        public Card Draw(int playerIndex)
+        {
+
+            List<Card> playerCardset = playersCardSet[playerIndex];
+
+            //get random card
+            int r = rnd.Next(playerCardset.Count) - 1;
+            Card cardDrawn = playerCardset[r];
+            Console.WriteLine(cardDrawn.Rank);
+            if (cardsPlayed.Count > 0 && cardDrawn.Rank == cardsPlayed[cardsPlayed.Count - 1].Rank)
+            {
+                Console.WriteLine("PLAYER WON");
+                foreach (Card c in cardsPlayed)
+                {
+                    playerCardset.Add(c);
+                }
+                cardsPlayed.Clear();
+
+                updateClients("Player " + (playerIndex + 1) + " " + cardDrawn.ToString());
+
+                //clear the window
+                foreach (ICallback cb in callbacks)
+                {
+                    cb.ClearData();
+                }
+            }
+            else
+            {
+                cardsPlayed.Add(cardDrawn);
+                playerCardset.RemoveAt(r);
+                //increment the active player index
+                if (numPlayers == activePlayerIndex + 1)
+                {
+                    activePlayerIndex = 0;
+                }
+                else
+                {
+                    activePlayerIndex++;
+                }
+
+                updateClients("Player " + (playerIndex + 1) + " " + cardDrawn.ToString());
+                return cardDrawn;
+            }
+
+            return null;
+        }
+
         private void populate()
         {
-            // Clear-out all the "old' cards
-            cards.Clear();
+            for (int d = 0; d < numPlayers; ++d)
+            {
+                List<Card> deck = new List<Card>();
+                foreach (SuitID s in Enum.GetValues(typeof(SuitID)))
+                    foreach (RankID r in Enum.GetValues(typeof(RankID)))
+                        deck.Add(new Card(s, r));
 
-            // For each deck in numDecks...
-            for (int d = 0; d < numDecks; ++d)
-                // For each suit..
-                foreach (Card.SuitID s in Enum.GetValues(typeof(Card.SuitID)))
-                    // For each rank..
-                    foreach (Card.RankID r in Enum.GetValues(typeof(Card.RankID)))
-                        cards.Add(new Card(s, r));
-
-            Shuffle();
+                playersCardSet.Add(deck);
+            }
         }
 
-        // Uses the client callback objects to send current Shoe information 
-        // to clients. If the change in teh Shoe state was triggered by a method call 
-        // from a specific client, then that particular client will be excluded from
-        // the update since it will already be updated directly by the call.
-        private void updateClients(bool emptyHand)
+        private void updateClients(string cardDrawn)
         {
-            // Identify which client just changed the Shoe object's state
-            ICallback thisClient = null;
-            if (OperationContext.Current != null)
-                thisClient = OperationContext.Current.GetCallbackChannel<ICallback>();
+            string counts = "";
 
-            // Prepare the CallbackInfo parameter
-            CallbackInfo info = new CallbackInfo(cards.Count - cardIdx, numDecks, emptyHand);
+            int counter = 1;
+            foreach (var l in playersCardSet)
+            {
+                counts += "Player " + counter + " has " + l.Count + " cards | ";
+                counter++;
+            }
 
-            // Update all clients except thisClient
             foreach (ICallback cb in callbacks)
-                if (thisClient == null || thisClient != cb)
-                    cb.UpdateClient(info);
+            {
+                //if (thisclient == null || thisclient != cb)
+                cb.UpdateClient(activePlayerIndex, cardDrawn, counts);
+            }
         }
 
-    } // end Shoe class
+        public void RegisterForCallbacks()
+        {
+            ICallback cb = OperationContext.Current.GetCallbackChannel<ICallback>();
+
+            if (!callbacks.Contains(cb))
+                callbacks.Add(cb);
+        }
+
+        public void UnregisterFromCallbacks()
+        {
+            ICallback cb = OperationContext.Current.GetCallbackChannel<ICallback>();
+
+            if (callbacks.Contains(cb))
+                callbacks.Remove(cb);
+        }
+    }
 }

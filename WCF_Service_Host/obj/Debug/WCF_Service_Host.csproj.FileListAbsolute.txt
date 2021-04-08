@@ -8,3 +8,13 @@ D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.cspro
 D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.csproj.CopyComplete
 D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.exe
 D:\Semester 5\.NET\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.pdb
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Service_Host\bin\Debug\WCF_Service_Host.exe.config
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Service_Host\bin\Debug\WCF_Service_Host.exe
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Service_Host\bin\Debug\WCF_Service_Host.pdb
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Service_Host\bin\Debug\WCF_Card_Library.dll
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Service_Host\bin\Debug\WCF_Card_Library.pdb
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.csprojAssemblyReference.cache
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.csproj.CoreCompileInputs.cache
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.csproj.CopyComplete
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.exe
+C:\Users\danis\Videos\.net project\WCF_Project\WCF_Service_Host\obj\Debug\WCF_Service_Host.pdb

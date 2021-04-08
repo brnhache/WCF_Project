@@ -1,0 +1,54 @@
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\bin\Debug\CardsGUIClient.exe.config
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\bin\Debug\CardsGUIClient.exe
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\bin\Debug\CardsGUIClient.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\bin\Debug\CardsLibrary.dll
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\bin\Debug\CardsLibrary.pdb
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\CardsGUIClient.csprojAssemblyReference.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\MainWindow.g.cs
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\App.g.cs
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\CardsGUIClient_MarkupCompile.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\CardsGUIClient_MarkupCompile.lref
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\MainWindow.baml
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\CardsGUIClient.g.resources
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\CardsGUIClient.Properties.Resources.resources
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\CardsGUIClient.csproj.GenerateResource.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\CardsGUIClient.csproj.CoreCompileInputs.cache
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\CardsGUIClient.csproj.CopyComplete
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\CardsGUIClient.exe
+C:\Users\thaworth\Documents\Courses\INFO-5060\Week.09\Tuesday\WCF example 2\CardsGUIClient\obj\Debug\CardsGUIClient.pdb
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\MainWindow.g.cs
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\App.g.cs
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\CardsGUIClient_MarkupCompile.cache
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\CardsGUIClient_MarkupCompile.lref
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\bin\Debug\CardsGUIClient.exe.config
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\bin\Debug\CardsGUIClient.exe
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\bin\Debug\CardsGUIClient.pdb
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\bin\Debug\CardsLibrary.dll
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\bin\Debug\CardsLibrary.pdb
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\MainWindow.baml
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\CardsGUIClient.g.resources
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\CardsGUIClient.Properties.Resources.resources
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\CardsGUIClient.csproj.GenerateResource.cache
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\CardsGUIClient.csproj.CoreCompileInputs.cache
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\CardsGUIClient.csproj.CopyComplete
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\CardsGUIClient.exe
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\CardsGUIClient.pdb
+C:\Users\danis\Downloads\WCF example 3\CardsGUIClient\obj\Debug\CardsGUIClient.csprojAssemblyReference.cache
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\bin\Debug\CardsGUIClient.exe.config
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\bin\Debug\CardsGUIClient.exe
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\bin\Debug\CardsGUIClient.pdb
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\bin\Debug\WCF_Card_Library.dll
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\bin\Debug\WCF_Card_Library.pdb
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\CardsGUIClient.csprojAssemblyReference.cache
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\MainWindow.g.cs
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\App.g.cs
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\CardsGUIClient_MarkupCompile.cache
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\CardsGUIClient_MarkupCompile.lref
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\MainWindow.baml
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\CardsGUIClient.g.resources
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\CardsGUIClient.Properties.Resources.resources
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\CardsGUIClient.csproj.GenerateResource.cache
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\CardsGUIClient.csproj.CoreCompileInputs.cache
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\CardsGUIClient.csproj.CopyComplete
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\CardsGUIClient.exe
+C:\Users\danis\Videos\.net project\WCF_Project\CardsGUIClient\obj\Debug\CardsGUIClient.pdb
