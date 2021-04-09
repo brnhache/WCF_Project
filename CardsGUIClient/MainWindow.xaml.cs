@@ -162,6 +162,39 @@ namespace CardsGUIClient
             }
         }
 
+        private delegate void GenericMessageDelegate(string message);
+
+        public void GenericMessage(string message)
+        {
+            if (Thread.CurrentThread == this.Dispatcher.Thread)
+            {
+                lstCards.Items.Insert(0, message);
+            }
+            else
+            {
+                this.Dispatcher.BeginInvoke(new GenericMessageDelegate(GenericMessage), message);
+            }
+        }
+
+        private delegate void KnockOutDelegate(int activePlayerIndex);
+
+        public void KnockOut(int activePlayerIndex)
+        {
+            if(Thread.CurrentThread == this.Dispatcher.Thread)
+            {
+                if (playerIndex == activePlayerIndex)
+                {
+                    Thread.CurrentThread.Abort(); // This almost seems to work...
+                    this.Close();
+                }
+                
+            }
+            else
+            {
+                this.Dispatcher.BeginInvoke(new KnockOutDelegate(KnockOut), activePlayerIndex);
+            }
+        }
+
 
         private delegate void ClientClearDelegate();
 

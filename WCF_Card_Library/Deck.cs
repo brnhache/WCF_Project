@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using static WCF_Card_Library.Card;
 
@@ -22,6 +23,10 @@ namespace WCF_Card_Library
     {
         [OperationContract(IsOneWay = true)]
         void UpdateClient(int playerIndex, string cardDrawn, string counts);
+        [OperationContract(IsOneWay = true)]
+        void GenericMessage(string message);
+        [OperationContract(IsOneWay = true)]
+        void KnockOut(int playerIndex);
 
         [OperationContract(IsOneWay = true)]
         void ClearData();
@@ -108,14 +113,16 @@ namespace WCF_Card_Library
         {
 
             List<Card> playerCardset = playersCardSet[playerIndex];
-
+            
             //get random card
             int r = rnd.Next(playerCardset.Count) - 1;
+            if(r < 0) { r = 0; } // r was occasionally -1 after i limited the hand to the first 10 cards of the deck.
             Card cardDrawn = playerCardset[r];
             Console.WriteLine(cardDrawn.Rank);
             if (cardsPlayed.Count > 0 && cardDrawn.Rank == cardsPlayed[cardsPlayed.Count - 1].Rank)
             {
                 Console.WriteLine("PLAYER WON");
+                
                 foreach (Card c in cardsPlayed)
                 {
                     playerCardset.Add(c);
@@ -124,16 +131,19 @@ namespace WCF_Card_Library
 
                 updateClients("Player " + (playerIndex + 1) + " " + cardDrawn.ToString());
 
-                //clear the window
-                foreach (ICallback cb in callbacks)
-                {
-                    cb.ClearData();
-                }
+                //just an idea to simplify the logic
+                ////clear the window
+                //foreach (ICallback cb in callbacks)
+                //{
+                //    cb.ClearData();
+                //}
+                genericMessage("Player " + (playerIndex + 1) + " Won the hand!");
             }
             else
             {
                 cardsPlayed.Add(cardDrawn);
                 playerCardset.RemoveAt(r);
+
                 //increment the active player index
                 if (numPlayers == activePlayerIndex + 1)
                 {
@@ -145,9 +155,30 @@ namespace WCF_Card_Library
                 }
 
                 updateClients("Player " + (playerIndex + 1) + " " + cardDrawn.ToString());
+                //check if player is out
+                if (playerCardset.Count == 0)
+                {
+                    genericMessage("Player " + (playerIndex + 1) + " has been knocked out!");
+                    knockOut(playerIndex);
+                    //check if game is over
+                    int playersIn = 0;
+                    int winningPlayer = 0;
+                    playersCardSet.ForEach(set =>
+                    {
+                        if (set.Count > 0)
+                        {
+                            winningPlayer = playersCardSet.IndexOf(set);
+                            playersIn++;
+                        }
+                    });
+                    if (playersIn == 1)
+                    {
+                        genericMessage("Player " + (winningPlayer + 1) + " has won the game!");
+                    }
+                }
                 return cardDrawn;
             }
-
+            genericMessage("=========================================================");
             return null;
         }
 
@@ -159,8 +190,9 @@ namespace WCF_Card_Library
                 foreach (SuitID s in Enum.GetValues(typeof(SuitID)))
                     foreach (RankID r in Enum.GetValues(typeof(RankID)))
                         deck.Add(new Card(s, r));
+                List<Card> hand = deck.GetRange(0, 5);
 
-                playersCardSet.Add(deck);
+                playersCardSet.Add(hand);
             }
         }
 
@@ -179,6 +211,21 @@ namespace WCF_Card_Library
             {
                 //if (thisclient == null || thisclient != cb)
                 cb.UpdateClient(activePlayerIndex, cardDrawn, counts);
+            }
+        }
+
+        private void genericMessage(string message)
+        {
+            foreach (ICallback cb in callbacks)
+            {
+                cb.GenericMessage(message);
+            }
+        }
+        private void knockOut(int playerIndex)
+        {
+            foreach (ICallback cb in callbacks)
+            {
+                cb.KnockOut(playerIndex);
             }
         }
 
