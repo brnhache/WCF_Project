@@ -18,7 +18,7 @@
         <Button x:Name="btnDraw" Content="Draw" HorizontalAlignment="Center" Height="35" Margin="257,27,77,0" VerticalAlignment="Top" Width="185" Click="btnDraw_Click" IsEnabled="True"/>
         <ListBox x:Name="lstCards" HorizontalAlignment="Center" Height="175" VerticalAlignment="Top" Width="185" Margin="257,75,77,0"/>
         <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Center" Height="32" Margin="257,265,77,0" VerticalAlignment="Top" Width="185" Click="btnClose_Click"/>
-        <Label x:Name="playerLabel" Content="" HorizontalAlignment="Left" Height="60" Margin="50,120,0,0" VerticalAlignment="Top" Width="125" FontSize="30"/>
-        <TextBlock  x:Name="cardCount" HorizontalAlignment="Left" Margin="50,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="90" Width="150"/>
+        <Label x:Name="playerLabel" Content="" HorizontalAlignment="Left" Height="60" Margin="50,45,0,0" VerticalAlignment="Top" Width="125" FontSize="30"/>
+        <TextBlock  x:Name="cardCount" HorizontalAlignment="Left" Margin="50,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="165" Width="125"/>
     </Grid>
 </Window>

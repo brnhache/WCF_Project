@@ -51,43 +51,24 @@ namespace CardsGUIClient
 
             if (playerIndex == 0)
             {
+                deck.PlayerIndex++;
                 string numPlayers = Interaction.InputBox("Enter Number of Players", "Enter Number of Players", "0", -1, -1);
                 deck.NumPlayers = Int32.Parse(numPlayers); ;
             }
+            else
+            {
+                deck.PlayerIndex++;
+            }
 
-            deck.PlayerIndex++;
-
-            // Register for the callback service
             deck.RegisterForCallbacks();
 
-            // Initialize the GUI
-            //updateCardCounts(false);
-
-        } // end default C'tor
-
-
-        // Helper methods
-
-        private void updateCardCounts(bool emptyHand)
-        {
-            //if (emptyHand)
-            //    // Only "throw out" drawn cards if the Shoe was shuffled 
-            //    // or the number of decks was changed
-            //    lstCards.Items.Clear();
-
-            //txtHandCount.Text = lstCards.Items.Count.ToString();
-            //txtShoeCount.Text = shoe.NumCards.ToString();
-        } // end updateCardCounts()
-
-        // Event handlers
+        }
 
         private void btnDraw_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 Card cardDrawn = deck.Draw(playerIndex);
-                //lstCards.Items.Insert(0, "sfdjfdhfd");
-                //txtDeckCount.Text = cardDrawn.ToString();
             }
             catch (Exception ex)
             {
@@ -95,47 +76,10 @@ namespace CardsGUIClient
             }
         }
 
-        private void btnShuffle_Click(object sender, RoutedEventArgs e)
-        {
-            //try
-            //{
-            //    shoe.Shuffle();
-
-            //    // Update the GUI
-            //    updateCardCounts(true);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-        } // end btnShuffle_Click()
-
-        private void sliderDecks_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            //try
-            //{
-            //    if (shoe != null)
-            //    {
-            //        // Reset the number of decks
-            //        shoe.NumDecks = (int)sliderDecks.Value;
-
-            //        // Update the GUI
-            //        updateCardCounts(true);
-            //        int n = shoe.NumDecks;
-            //        txtDeckCount.Text = n + " deck" + (n == 1 ? "" : "s");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-        } // end sliderDecks_ValueChanged()
-
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
 
         private delegate void ClientUpdateDelegate(int playerIndex, string cardDrawn, string count);
 
@@ -145,7 +89,7 @@ namespace CardsGUIClient
             {
                 lstCards.Items.Insert(0, cardDrawn);
                 cardCount.Text = count;
-                //Update the GUI
+
                 if (activePlayerIndex == playerIndex)
                 {
                     btnDraw.IsEnabled = true;
@@ -168,7 +112,15 @@ namespace CardsGUIClient
         {
             if (Thread.CurrentThread == this.Dispatcher.Thread)
             {
-                lstCards.Items.Insert(0, message);
+                if (message.Contains("won"))
+                {
+                    MessageBox.Show(message);
+                    this.Close();
+                }
+                else
+                {
+                    lstCards.Items.Insert(0, message);
+                }
             }
             else
             {
@@ -180,14 +132,13 @@ namespace CardsGUIClient
 
         public void KnockOut(int activePlayerIndex)
         {
-            if(Thread.CurrentThread == this.Dispatcher.Thread)
+            if (Thread.CurrentThread == this.Dispatcher.Thread)
             {
                 if (playerIndex == activePlayerIndex)
                 {
-                    Thread.CurrentThread.Abort(); // This almost seems to work...
+                    MessageBox.Show("Player " + (playerIndex + 1) + " lost the game");
                     this.Close();
                 }
-                
             }
             else
             {
@@ -210,15 +161,10 @@ namespace CardsGUIClient
             }
         }
 
-        public void updateButton(int activePlayerIndex)
-        {
-
-        }
-
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            //shoe?.UnregisterFromCallbacks();
+            deck?.UnregisterFromCallbacks();
         }
 
-    } // end MainWindow class
+    }
 }
